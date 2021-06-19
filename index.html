@@ -18,17 +18,38 @@
     </section>
     <section class="talker-section">
         <audio id="sorry">
-                <source src="./audio/sorry.mp3">
+            <source src="./audio/sorry.mp3">
         </audio>
-        <form name="musicform">
-            <input id="talker-alternative" class="talker-alternative" type="button" value="付き合ってください">
-        </form>
-        <button id="voice-btn">音声認識開始</button>
-        <div id="content"></div>
+        <audio id="ice">
+            <source src="./audio/ice.mp3">
+        </audio>
+        <audio id="medicine">
+            <source src="./audio/medicine.mp3">
+        </audio>
+        <audio id="yammy">
+            <source src="./audio/yammy.mp3">
+        </audio>
+        <audio id="potato">
+            <source src="./audio/potato.mp3">
+        </audio>
+        <audio id="likeyou">
+            <source src="./audio/likeyou.mp3">
+        </audio>
+        <div>
+            <button id="voice-btn">
+                音声認識開始
+            </button>
+            <div id="content"></div>
+        </div>
+        <div class="script-wrapper">
+            <p class="script1">1</p>
+            <p class="script2">2</p>
+            <p class="script3">3</p>
+        </div>
     </section>
     <script src="./js/script.js"></script>
-    <script src="./js/audio.js"></script>
     <script src="./js/app.js"></script>
+    <!-- <script src="./js/conversation.js"></script> -->
 </body>
 
 </html>
