@@ -1,17 +1,18 @@
-var audio = document.getElementById("sorry");
-var audio2 = document.getElementById("ice");
-var audio3 = document.getElementById("medicine");
+var sorry = document.getElementById("sorry");
+var ice = document.getElementById("ice");
+var medicine = document.getElementById("medicine");
+var likeyou = document.getElementById("likeyou");
+var potato = document.getElementById("potato");
+var yammy = document.getElementById("yammy");
 
-var button = document.getElementById("talker-alternative");
-var button2 = document.getElementById("talker-alternative2");
-var button3 = document.getElementById("talker-alternative3");
+var content = document.getElementById("content");
 
-button.addEventListener("click", function() {
+if(content==="お昼何食べたい") {
     audio.play();
-}, false);
-button2.addEventListener("click", function() {
-    audio2.play();
-}, false);
-button3.addEventListener("click", function() {
-    audio3.play();
-}, false);
+}
+
+// var audio = document.getElementById("sorry");
+// var button = document.getElementById("talker-alternative");
+// button.addEventListener("click", function() {
+//     audio.play();
+// }, false);
