@@ -46,7 +46,7 @@ var playVideo = function(endingTime) {
 start_btn.onclick = function() {
     script1.textContent = "お昼何食べたい？";
     script2.textContent = "初めて会った時、俺のことどう思った？";
-    if (date >= 0 && date <= 10) {
+    if (date >=0 && date <= 10) {
         script3.textContent = "星野源と付き合ってたの？（ちょっと怒り気味で）";
         console.log(date);
     }
@@ -55,7 +55,7 @@ start_btn.onclick = function() {
         console.log(date);
     }
     if (date >= 16 && date <= 20) {
-        script3.textContent = "今日夕食つくって！";
+        script3.textContent = "今日夕食作って！";
         console.log(date);
     }
     if (date >= 20 && date <= 24) {
@@ -67,6 +67,13 @@ start_btn.onclick = function() {
 // reloadメソッドによりページをリロード
 function doReload() {
     window.location.reload();
+}
+
+// もう一回話したい
+var SayOneMore = function() {
+    script1.style.display = 'none';
+    script2.textContent = "もう1回話したい";
+    script3.style.display = 'none';
 }
 
 function vr_function() {
@@ -122,6 +129,7 @@ function vr_function() {
                     playVideo(2);
                     gakky_comment.textContent = "ん！おいしい〜！";
                     vr_function();
+                    SayOneMore();
                 }
             } else if (text.indexOf("いっぱい食べる人好きだよ") !== -1) {
                 if (script1.textContent == "いっぱい食べる人好きだよ") {
@@ -129,6 +137,7 @@ function vr_function() {
                     playVideo(2);
                     gakky_comment.textContent = "好きって言われたら嬉しいです。(照";
                     vr_function();
+                    SayOneMore();
                 }
             } else if (text.indexOf("食べ過ぎだよポテトはなしね") !== -1) {
                 if (script2.textContent == "食べ過ぎだよ。ポテトはなしね？") {
@@ -136,6 +145,7 @@ function vr_function() {
                     playVideo(1.5);
                     gakky_comment.textContent = "えっ！やだ！";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("初めて会った時俺のことどう思った") !== -1) {
@@ -154,6 +164,7 @@ function vr_function() {
                     playVideo(1);
                     gakky_comment.textContent = "ごめんなさい！";
                     vr_function();
+                    SayOneMore();
                 }
             } else if (text.indexOf("俺のこと今どう思ってる") !== -1) {
                 if (script2.textContent == "俺のこと今どう思ってる？") {
@@ -161,6 +172,7 @@ function vr_function() {
                     playVideo(1);
                     gakky_comment.textContent = "つまんない！";
                     vr_function();
+                    SayOneMore();
                 }
             } else if (text.indexOf("ガッキーかわいいね") !== -1) {
                 if (script3.textContent == "ガッキーかわいいね") {
@@ -168,6 +180,7 @@ function vr_function() {
                     playVideo(4.5);
                     gakky_comment.textContent = "どうしてそーゆーこというんですか！？どんどん好きになっちゃうじゃないですか！";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("星野源のせいで立ち直れないんだけど") !== -1) {
@@ -176,6 +189,7 @@ function vr_function() {
                     playVideo(2.5);
                     gakky_comment.textContent = "おい、人のせいにするな！";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("星野源と付き合ってたの") !== -1) {
@@ -184,14 +198,16 @@ function vr_function() {
                     playVideo(1.5);
                     gakky_comment.textContent = "思い過ごしですよ！（汗";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("今日夕食作って") !== -1) {
-                if (script3.textContent == "今日夕食つくって！") {
+                if (script3.textContent == "今日夕食作って！") {
                     get_used_to.play();　
                     playVideo(2.5);
                     gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("俳優とリクルートどっちがいいの") !== -1) {
@@ -200,6 +216,7 @@ function vr_function() {
                     playVideo(1);
                     gakky_comment.textContent = "リクルート！";
                     vr_function();
+                    SayOneMore();
                 }
             }
             if (text.indexOf("もう1回話したい") !== -1) {
