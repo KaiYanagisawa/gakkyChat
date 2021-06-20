@@ -11,7 +11,6 @@ var morelike = document.getElementById("more_like");
 var blame = document.getElementById("blame");
 var get_used_to = document.getElementById("get_used_to");
 
-
 //script
 var script1 = document.getElementById("script1");
 var script2 = document.getElementById("script2");
@@ -25,13 +24,20 @@ var gakky_comment = document.getElementById('gakky-comment');
 const getDate = new Date();
 var date = getDate.getHours();
 
+// video
+var video = document.querySelector('#video');
+
+var playVideo = function(endingTime) {
+    video.play();
+    setTimeout('video.pause()', endingTime * 1000);
+}
 
 if (date > 6 && date < 12) {
     script3.textContent = "3,星野源のせいで立ち直れないんだけど。";
     console.log(date);
 }
 if (date > 12 && date < 18) {
-    script3.textContent = "3,今日夕食つくって！";
+    script3.textContent = "3,星野源のせいで立ち直れないんだけど。";
     console.log(date);
 }
 
@@ -46,15 +52,16 @@ btn.addEventListener('click', function() {
     btn.textContent = "話してください";
 });
 
-
 speech.addEventListener('result', function(e) {
     console.log(e);
     var text = e.results[0][0].transcript;
     content.textContent = text;
     btn.textContent = "声をかける";
+    
     if (text == "お昼何食べたい") {
         if (script1.textContent == "1,お昼何食べたい？") {
             potato.play();
+            playVideo(8);
             gakky_comment.textContent = "ディームンプレートの２２５ｇのやつとフライドチキンのセット！ポテトとか全部大盛りで";
         }
         script1.textContent = "1,いっぱい食べる人好きだよ";
@@ -62,25 +69,30 @@ speech.addEventListener('result', function(e) {
         script3.textContent = "3,おいしい？";
     } else if (text == "付き合ってください") {
         sorry.play();
+        playVideo(1);
         gakky_comment.textContent = "ごめんなさい！";
     } else if (text == "美味しい") {
         if (script3.textContent == "3,おいしい？") {
             yammy.play();
+            playVideo(2);
             gakky_comment.textContent = "ん！おいしい〜！";
         }
     } else if (text == "いっぱい食べる人 好きだよ") {
         if (script1 == "1,いっぱい食べる人好きだよ")
             likeyou.play();
+            playVideo(2);
         gakky_comment.textContent = "好きって言われたら嬉しいです。(照";
     } else if (text == "食べ過ぎだよ ポテトはなしね") {
         if (script2.textContent == "2,食べ過ぎだよ。ポテトはなしね？") {
             no.play();
+            playVideo(1.5);
             gakky_comment.textContent = "えっ！やだ！";
         }
     }
     if (text == "初めて会った時 俺のことどう思った") {
         if (script2.textContent == "2,初めて会った時、俺のことどう思った？") {
             natural.play();
+            playVideo(3.5);
             gakky_comment.textContent = "ナチュラルですごく印象的。でした。。";
         }
         script1.textContent = "1,なら付き合ってよ";
@@ -89,28 +101,33 @@ speech.addEventListener('result', function(e) {
     } else if (text == "なら付き合ってよ") {
         if (script1.textContent == "1,なら付き合ってよ") {
             sorry.play();
+            playVideo(1);
             gakky_comment.textContent = "ごめんなさい！";
         }
     } else if (text == "俺のこと 今どう思ってる") {
         if (script2.textContent == "2,俺のこと今どう思ってる？") {
             boring.play();
+            playVideo(1);
             gakky_comment.textContent = "つまんない！";
         }
     } else if (text == "ガッキー かわいいね") {
         if (script3.textContent == "3,ガッキーかわいいね") {
             morelike.play();
+            playVideo(4.5);
             gakky_comment.textContent = "どうしてそーゆーこというんですか！？どんどん好きになっちゃうじゃないですか！";
         }
     }
     if (text == "星野源のせいで立ち直れないんだけど") {
         if (script3.textContent == "3,星野源のせいで立ち直れないんだけど。") {
             blame.play();
+            playVideo(2.5);
             gakky_comment.textContent = "おい、人のせいにするな！";
         }
     }
     if (text == "今日 夕食 作って") {
         if (script3.textContent == "3,今日夕食つくって！") {
             get_used_to.play();
+            playVideo(2.5);
             gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
         }
     }
