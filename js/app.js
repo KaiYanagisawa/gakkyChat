@@ -89,7 +89,7 @@ function vr_function() {
         }
         var text = e.results[0][0].transcript;
         content.textContent = text;
-        if (text.indexOf("楽器") !== -1 || text.indexOf("ガッキー") !== -1 || text.indexOf("タッキー") !== -1) {
+        if (text.indexOf("楽器") !== -1 || text.indexOf("ガッキー") !== -1 || text.indexOf("タッキー") !== -1 || text.indexOf("ラッキー") !== -1) {
             if (text.indexOf("お昼何食べたい") !== -1) {
                 if (script1.textContent == "お昼何食べたい？") {
                     potato.play();
@@ -109,23 +109,23 @@ function vr_function() {
                 }
             } else if (text.indexOf("いっぱい食べる人好きだよ") !== -1) {
                 if (script1 == "いっぱい食べる人好きだよ") {
-                    likeyou.play();
-                  　playVideo(2);
+                    likeyou.play();　
+                    playVideo(2);
                     gakky_comment.textContent = "好きって言われたら嬉しいです。(照";
                     vr_function();
                 }
             } else if (text.indexOf("食べ過ぎだよポテトはなしね") !== -1) {
                 if (script2.textContent == "食べ過ぎだよ。ポテトはなしね？") {
-                    no.play();
-                  　playVideo(1.5);
+                    no.play();　
+                    playVideo(1.5);
                     gakky_comment.textContent = "えっ！やだ！";
                     vr_function();
                 }
             }
             if (text.indexOf("初めて会った時俺のことどう思った") !== -1) {
                 if (script2.textContent == "初めて会った時、俺のことどう思った？") {
-                    natural.play();
-                  　playVideo(3.5);
+                    natural.play();　
+                    playVideo(3.5);
                     gakky_comment.textContent = "ナチュラルですごく印象的。でした。。";
                     vr_function();
                 }
@@ -134,38 +134,38 @@ function vr_function() {
                 script3.textContent = "ガッキーかわいいね";
             } else if (text.indexOf("なら付き合ってよ") !== -1) {
                 if (script1.textContent == "なら付き合ってよ") {
-                    sorry.play();
-                  　playVideo(1);
+                    sorry.play();　
+                    playVideo(1);
                     gakky_comment.textContent = "ごめんなさい！";
                     vr_function();
                 }
             } else if (text.indexOf("俺のこと今どう思ってる") !== -1) {
                 if (script2.textContent == "俺のこと今どう思ってる？") {
-                    boring.play();
-                  　playVideo(1);
+                    boring.play();　
+                    playVideo(1);
                     gakky_comment.textContent = "つまんない！";
                     vr_function();
                 }
             } else if (text.indexOf("ガッキーかわいいね") !== -1) {
                 if (script3.textContent == "ガッキーかわいいね") {
-                    morelike.play();
-                  　playVideo(4.5);
+                    morelike.play();　
+                    playVideo(4.5);
                     gakky_comment.textContent = "どうしてそーゆーこというんですか！？どんどん好きになっちゃうじゃないですか！";
                     vr_function();
                 }
             }
             if (text.indexOf("星野源のせいで立ち直れないんだけど") !== -1) {
                 if (script3.textContent == "星野源のせいで立ち直れないんだけど。") {
-                    blame.play();
-                  　playVideo(2.5);
+                    blame.play();　
+                    playVideo(2.5);
                     gakky_comment.textContent = "おい、人のせいにするな！";
                     vr_function();
                 }
             }
             if (text.indexOf("今日夕食作って") !== -1) {
                 if (script3.textContent == "今日夕食つくって！") {
-                    get_used_to.play();
-                  　playVideo(2.5);
+                    get_used_to.play();　
+                    playVideo(2.5);
                     gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
                     vr_function();
                 }
