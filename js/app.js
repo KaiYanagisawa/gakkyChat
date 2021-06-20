@@ -11,6 +11,8 @@ var morelike = document.getElementById("more_like");
 var blame = document.getElementById("blame");
 var get_used_to = document.getElementById("get_used_to");
 var happy = document.getElementById("happy");
+var overlooked = document.getElementById("overlooked");
+var recruit = document.getElementById("recruit");
 
 //script
 var script1 = document.getElementById("script1");
@@ -44,12 +46,20 @@ var playVideo = function(endingTime) {
 start_btn.onclick = function() {
     script1.textContent = "お昼何食べたい？";
     script2.textContent = "初めて会った時、俺のことどう思った？";
-    if (date >= 6 && date <= 12) {
+    if (date >= 0 && date <= 10) {
+        script3.textContent = "星野源と付き合ってたの？（ちょっと怒り気味で）";
+        console.log(date);
+    }
+    if (date >= 10 && date <= 16) {
         script3.textContent = "星野源のせいで立ち直れないんだけど。";
         console.log(date);
     }
-    if (date >= 12 && date <= 18) {
+    if (date >= 16 && date <= 20) {
         script3.textContent = "今日夕食つくって！";
+        console.log(date);
+    }
+    if (date >= 20 && date <= 24) {
+        script3.textContent = "俳優とリクルートどっちがいいの？";
         console.log(date);
     }
 }
@@ -168,11 +178,27 @@ function vr_function() {
                     vr_function();
                 }
             }
+            if (text.indexOf("星野源と付き合ってたの") !== -1) {
+                if (script3.textContent == "星野源と付き合ってたの？（ちょっと怒り気味で）") {
+                    overlooked.play();
+                    playVideo(1.5);
+                    gakky_comment.textContent = "思い過ごしですよ！（汗";
+                    vr_function();
+                }
+            }
             if (text.indexOf("今日夕食作って") !== -1) {
                 if (script3.textContent == "今日夕食つくって！") {
                     get_used_to.play();　
                     playVideo(2.5);
                     gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
+                    vr_function();
+                }
+            }
+            if (text.indexOf("俳優とリクルートどっちがいいの") !== -1) {
+                if (script3.textContent == "俳優とリクルートどっちがいいの？") {
+                    recruit.play();　
+                    playVideo(1);
+                    gakky_comment.textContent = "リクルート！";
                     vr_function();
                 }
             }
