@@ -11,7 +11,6 @@ var morelike = document.getElementById("more_like");
 var blame = document.getElementById("blame");
 var get_used_to = document.getElementById("get_used_to");
 
-
 //script
 var script1 = document.getElementById("script1");
 var script2 = document.getElementById("script2");
@@ -30,6 +29,15 @@ window.onload = function() {
 //getDate
 const getDate = new Date();
 var date = getDate.getHours();
+
+
+// video
+var video = document.querySelector('#video');
+
+var playVideo = function(endingTime) {
+    video.play();
+    setTimeout('video.pause()', endingTime * 1000);
+}
 
 //start
 start_btn.onclick = function() {
@@ -85,6 +93,7 @@ function vr_function() {
             if (text.indexOf("お昼何食べたい") !== -1) {
                 if (script1.textContent == "お昼何食べたい？") {
                     potato.play();
+                    playVideo(8);
                     gakky_comment.textContent = "ディームンプレートの２２５ｇのやつとフライドチキンのセット！ポテトとか全部大盛りで";
                     vr_function();
                 }
@@ -94,18 +103,21 @@ function vr_function() {
             } else if (text.indexOf("美味しい") !== -1) {
                 if (script3.textContent == "おいしい？") {
                     yammy.play();
+                    playVideo(2);
                     gakky_comment.textContent = "ん！おいしい〜！";
                     vr_function();
                 }
             } else if (text.indexOf("いっぱい食べる人好きだよ") !== -1) {
                 if (script1 == "いっぱい食べる人好きだよ") {
                     likeyou.play();
+                  　playVideo(2);
                     gakky_comment.textContent = "好きって言われたら嬉しいです。(照";
                     vr_function();
                 }
             } else if (text.indexOf("食べ過ぎだよポテトはなしね") !== -1) {
                 if (script2.textContent == "食べ過ぎだよ。ポテトはなしね？") {
                     no.play();
+                  　playVideo(1.5);
                     gakky_comment.textContent = "えっ！やだ！";
                     vr_function();
                 }
@@ -113,6 +125,7 @@ function vr_function() {
             if (text.indexOf("初めて会った時俺のことどう思った") !== -1) {
                 if (script2.textContent == "初めて会った時、俺のことどう思った？") {
                     natural.play();
+                  　playVideo(3.5);
                     gakky_comment.textContent = "ナチュラルですごく印象的。でした。。";
                     vr_function();
                 }
@@ -122,18 +135,21 @@ function vr_function() {
             } else if (text.indexOf("なら付き合ってよ") !== -1) {
                 if (script1.textContent == "なら付き合ってよ") {
                     sorry.play();
+                  　playVideo(1);
                     gakky_comment.textContent = "ごめんなさい！";
                     vr_function();
                 }
             } else if (text.indexOf("俺のこと今どう思ってる") !== -1) {
                 if (script2.textContent == "俺のこと今どう思ってる？") {
                     boring.play();
+                  　playVideo(1);
                     gakky_comment.textContent = "つまんない！";
                     vr_function();
                 }
             } else if (text.indexOf("ガッキーかわいいね") !== -1) {
                 if (script3.textContent == "ガッキーかわいいね") {
                     morelike.play();
+                  　playVideo(4.5);
                     gakky_comment.textContent = "どうしてそーゆーこというんですか！？どんどん好きになっちゃうじゃないですか！";
                     vr_function();
                 }
@@ -141,6 +157,7 @@ function vr_function() {
             if (text.indexOf("星野源のせいで立ち直れないんだけど") !== -1) {
                 if (script3.textContent == "星野源のせいで立ち直れないんだけど。") {
                     blame.play();
+                  　playVideo(2.5);
                     gakky_comment.textContent = "おい、人のせいにするな！";
                     vr_function();
                 }
@@ -148,6 +165,7 @@ function vr_function() {
             if (text.indexOf("今日夕食作って") !== -1) {
                 if (script3.textContent == "今日夕食つくって！") {
                     get_used_to.play();
+                  　playVideo(2.5);
                     gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
                     vr_function();
                 }
