@@ -205,11 +205,12 @@ function vr_function() {
             if (text.indexOf("もう1回話したい") !== -1) {
                 console.log("end");
                 morelike.play();
+                playVideo(4.0);
                 setTimeout(doReload, 5000);
             }
         }
     }
     flag_speech = 0;
-    document.getElementById('status').innerHTML = "準備完了";
+    document.getElementById('status').innerHTML = "話しかけてみてください";
     speech.start();
 }
