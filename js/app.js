@@ -10,6 +10,7 @@ var medicine = document.getElementById("medicine");
 var morelike = document.getElementById("more_like");
 var blame = document.getElementById("blame");
 var get_used_to = document.getElementById("get_used_to");
+var happy = document.getElementById("happy");
 
 //script
 var script1 = document.getElementById("script1");
@@ -51,6 +52,11 @@ start_btn.onclick = function() {
         script3.textContent = "今日夕食つくって！";
         console.log(date);
     }
+}
+
+// reloadメソッドによりページをリロード
+function doReload() {
+    window.location.reload();
 }
 
 function vr_function() {
@@ -108,8 +114,8 @@ function vr_function() {
                     vr_function();
                 }
             } else if (text.indexOf("いっぱい食べる人好きだよ") !== -1) {
-                if (script1 == "いっぱい食べる人好きだよ") {
-                    likeyou.play();　
+                if (script1.textContent == "いっぱい食べる人好きだよ") {
+                    happy.play();
                     playVideo(2);
                     gakky_comment.textContent = "好きって言われたら嬉しいです。(照";
                     vr_function();
@@ -169,6 +175,11 @@ function vr_function() {
                     gakky_comment.textContent = "慣れてないから難しいかもしれないなぁ";
                     vr_function();
                 }
+            }
+            if (text.indexOf("もう1回話したい") !== -1) {
+                console.log("end");
+                morelike.play();
+                setTimeout(doReload, 5000);
             }
         }
     }
